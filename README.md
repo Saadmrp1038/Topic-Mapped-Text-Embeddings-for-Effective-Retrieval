@@ -29,7 +29,7 @@ The system allows for querying an image collection using natural language and co
 - `retreivers/`: Different retrieval method implementations
 - `evaluation_dataset/`: Test dataset for retrieval evaluation
 - `evaluation_results/`: Storage for evaluation metrics
-- `image_collection/`: Collection of images used for retrieval
+- `image_collection/`: Code for image link collection, download and also image selection ui
 - `preprocess/`: Scripts for data preprocessing
 
 ## Requirements
@@ -90,20 +90,10 @@ The frontend will be available at http://localhost:5173
 ### Running the Streamlit Evaluation App
 
 ```
-python run_app.py
+streamlit run image_collection/image_picker_streamlit_ui.py
 ```
 
 The Streamlit app will be available at http://localhost:8501
-
-## API Endpoints
-
-- `GET /get-images?query={text}&k={num_results}`: Retrieve images matching the query using all methods
-- `GET /evaluation-results`: Get all saved evaluation results
-- `POST /evaluation-results`: Save new evaluation results
-
-## Evaluation
-
-The system includes tools for evaluating the performance of different retrieval methods. Results are stored in `evaluation_results/` and can be visualized through the Streamlit interface.
 
 ## License
 
