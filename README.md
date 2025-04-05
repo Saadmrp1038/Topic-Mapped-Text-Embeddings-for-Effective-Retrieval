@@ -97,8 +97,4 @@ The Streamlit app will be available at http://localhost:8501
 
 ## License
 
-[Specify the license here]
-
-## Contributors
-
-[List contributors here]
+[MIT License](https://mit-license.org/)
