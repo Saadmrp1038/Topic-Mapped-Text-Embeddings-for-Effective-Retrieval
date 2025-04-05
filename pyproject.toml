@@ -23,6 +23,9 @@ dependencies = [
     "torchvision>=0.21.0",
     "sentence-transformers>=4.0.1",
     "streamlit>=1.44.1",
+    "rank-bm25>=0.2.2",
+    "fastapi>=0.115.12",
+    "uvicorn>=0.34.0",
 ]
 
 [build-system]

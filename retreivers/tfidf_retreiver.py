@@ -7,8 +7,17 @@ PICKLE_DIR = "preprocess/tfidf/pickle_files"
 
 def load_retriever(structure_num: int) -> TFIDFRetriever:
     """Load a TF-IDF retriever for a specific structure number."""
+    # The path is already a directory, not a file
     pickle_path = os.path.join(PICKLE_DIR, f"tfidf_structure_{structure_num}.pkl")
-    return TFIDFRetriever.load_local(pickle_path)
+    
+    # Check if the directory exists
+    if not os.path.isdir(pickle_path):
+        # Try using the fallback directory
+        pickle_path = os.path.join(PICKLE_DIR, "tfidf.pkl")
+        if not os.path.isdir(pickle_path):
+            raise FileNotFoundError(f"Could not find TF-IDF retriever files at {pickle_path}")
+    
+    return TFIDFRetriever.load_local(pickle_path, allow_dangerous_deserialization=True)
 
 def get_top_image_metadata(query: str, structure_num: int) -> Dict[str, Any]:
     """

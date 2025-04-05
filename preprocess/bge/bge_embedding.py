@@ -22,7 +22,8 @@ def process_item_structures(item):
     context_free_description = item.get("context_free_description", "")
     topic_definition = item.get("topic_definition", "")
     subtopic_definition = item.get("subtopic_definition", "")
-    
+
+    print(subtopic_definition)
     # Structure 1: context_free_image_description
     structure1 = context_free_description
     
